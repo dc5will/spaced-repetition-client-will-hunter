@@ -14,3 +14,9 @@
 .haveAnAccount:visited {
   color: navy;
 }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
