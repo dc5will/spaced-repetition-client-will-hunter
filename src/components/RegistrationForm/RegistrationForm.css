@@ -14,9 +14,3 @@
 .haveAnAccount:visited {
   color: navy;
 }
-
-@media only screen and (max-width: 600px) {
-  .registration {
-    top: 100px;
-  }
-}
