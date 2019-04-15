@@ -1,30 +1,29 @@
-import React, { Component } from 'react'
-import LoginForm from '../../components/LoginForm/LoginForm'
+import React, { Component } from "react";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import "./LoginRoute.css";
 
 class LoginRoute extends Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => { },
-    },
-  }
+      push: () => {}
+    }
+  };
 
   handleLoginSuccess = () => {
-    const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
-    history.push(destination)
-  }
+    const { location, history } = this.props;
+    const destination = (location.state || {}).from || "/";
+    history.push(destination);
+  };
 
   render() {
     return (
       <section>
-        <h2>Login</h2>
-        <LoginForm
-          onLoginSuccess={this.handleLoginSuccess}
-        />
+        <h2 className="loginTitle">Login</h2>
+        <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </section>
     );
   }
 }
 
-export default LoginRoute
+export default LoginRoute;

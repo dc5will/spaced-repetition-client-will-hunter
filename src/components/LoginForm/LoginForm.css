@@ -2,15 +2,10 @@
   text-align: center;
 }
 
-.registration {
+.LoginForm {
   border: 2px dotted navy;
   position: relative;
   margin: auto;
   width: 50%;
   text-align: center;
-}
-
-.haveAnAccount:link,
-.haveAnAccount:visited {
-  color: navy;
 }

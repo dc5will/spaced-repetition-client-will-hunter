@@ -1,0 +1,12 @@
+.Label {
+  text-align: center;
+  color: blue;
+  margin: 10px;
+}
+
+.Input {
+  text-align: center;
+  margin: 15px;
+  border: 3px blue double;
+  background: white;
+}
