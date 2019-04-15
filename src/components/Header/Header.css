@@ -1,15 +1,7 @@
-.login,
-.register,
-.logout {
-  border-width: 200px;
-  margin: 10px;
-  border: 1px solid navy;
-  padding: 10px;
-  color: white;
-  background: lightblue;
-  border-radius: 10%;
-  float: right;
-  font-weight: bold;
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .spacedRepetition {
@@ -19,11 +11,23 @@
   margin: 20px;
   padding: 5px;
   background: white;
-  position: fixed;
-  left: 30px;
-  top: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-  display: ;
+.login,
+.register {
+  border-width: 200px;
+  margin: 20px 0px 20px 0px;
+  border: 1px solid navy;
+  padding: 10px;
+  color: white;
+  background: lightblue;
+  border-radius: 10%;
+  font-weight: bold;
 }
+
+nav {
+  margin: 50px;
+}
+/* @media only screen and (max-width: 600px) {
+  display: ;
+} */

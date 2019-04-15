@@ -5,7 +5,7 @@
 .LoginForm {
   border: 2px dotted navy;
   position: relative;
-  margin: auto;
   width: 50%;
+  margin: auto;
   text-align: center;
 }
