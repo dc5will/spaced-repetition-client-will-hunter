@@ -4,7 +4,33 @@
   color: blue;
 }
 
+.mobileDescription {
+  display: none;
+}
+
 .signup {
   color: navy;
   font-size: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  .description {
+    display: none;
+  }
+
+  .signup {
+    background: none;
+    top: 40px;
+    left: calc(100% - 90%);
+    position: relative;
+  }
+
+  .mobileDescription {
+    position: relative;
+    top: 60px;
+    left: 10px;
+    display: inline;
+    color: blue;
+    font-size: 8pt;
+  }
 }

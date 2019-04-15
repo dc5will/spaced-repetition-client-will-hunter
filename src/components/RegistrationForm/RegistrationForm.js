@@ -74,7 +74,7 @@ class RegistrationForm extends Component {
           />
         </div>
         <footer>
-          <Button type="submit">Sign up</Button>{" "}
+          <Button type="submit">Sign up</Button> <br />
           <Link className="haveAnAccount" to="/login">
             Already have an account?
           </Link>
