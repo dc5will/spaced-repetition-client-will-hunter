@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias": "spaced-repetition-will-hunter",
+  "name": "spaced-repetition-will-hunter",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+  ]
+}
