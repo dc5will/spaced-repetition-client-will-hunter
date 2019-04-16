@@ -15,6 +15,16 @@
   color: navy;
 }
 
+.name,
+.chooseUserName,
+.choosePassword,
+footer,
+label,
+span,
+.haveAnAccount {
+  background: rgb(248, 226, 226);
+}
+
 footer {
   display: flex;
   flex-wrap: wrap;

@@ -54,14 +54,14 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className="chooseUserName">
           <Label htmlFor="registration-username-input">
             Choose a username
             <Required />
           </Label>
           <Input id="registration-username-input" name="username" required />
         </div>
-        <div>
+        <div className="choosePassword">
           <Label htmlFor="registration-password-input">
             Choose a password
             <Required />

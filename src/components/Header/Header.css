@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+h1 {
+  background: rgb(248, 226, 226);
+  border: 25px solid rgb(248, 226, 226);
+}
+
 .spacedRepetition {
   color: rgb(147, 215, 238);
   border-width: 100%;
@@ -16,8 +21,8 @@
 .login,
 .register,
 .logout {
+  margin: auto;
   border-width: 200px;
-  margin: 20px 0px 20px 0px;
   border: 1px solid navy;
   padding: 10px;
   color: white;
@@ -32,4 +37,16 @@
 
 nav {
   margin: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .spacedRepetition {
+    font-size: 10pt;
+    color: rgb(147, 215, 238);
+    border-width: 100%;
+    border: 3px double blue;
+    margin: 20px;
+    padding: 5px;
+    background: white;
+  }
 }

@@ -4,8 +4,14 @@
 
 .LoginForm {
   border: 2px dotted navy;
+  background: rgb(248, 226, 226);
   position: relative;
   width: 50%;
   margin: auto;
   text-align: center;
+}
+
+.loginUserName,
+.loginPassword {
+  background: rgb(248, 226, 226);
 }
