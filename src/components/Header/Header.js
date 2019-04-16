@@ -13,7 +13,7 @@ class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div>
+      <div className='logged-in-header'>
         <span className="userName">Hello {this.context.user.name}!</span>
         <nav>
           <Link className="logout" onClick={this.handleLogoutClick} to="/login">
@@ -26,7 +26,7 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <nav>
+      <nav className='logged-out-header'>
         <Link className="login" to="/login">
           Login
         </Link>{" "}

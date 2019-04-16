@@ -13,7 +13,7 @@ class DashboardRoute extends Component {
   static contextType = UserContext;
 
   componentDidMount() {
-    console.log(this.state.words)
+    // console.log(this.state.words)
     DashboardApiService.getLanguage().then(data => {
       console.log(data.language.name);
       this.setState({ language: data.language.name, words: data.words })
@@ -33,7 +33,8 @@ class DashboardRoute extends Component {
   }
 
   render() {
-    console.log(this.state.language);
+
+    // console.log(this.state.language.total_score)
     return (
       <section>
         <h2>Learn {this.state.language}</h2>
