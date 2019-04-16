@@ -21,14 +21,14 @@ h1 {
 .login,
 .register,
 .logout {
-  margin: auto;
-  border-width: 200px;
+  margin: 5px;
   border: 1px solid navy;
   padding: 10px;
   color: white;
   background: lightblue;
   border-radius: 10%;
   font-weight: bold;
+  float: right;
 }
 
 .userName {
@@ -38,6 +38,7 @@ h1 {
 
 nav {
   margin: 50px;
+  margin-bottom: 100px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -49,5 +50,22 @@ nav {
     margin: 20px;
     padding: 5px;
     background: white;
+  }
+
+  nav {
+    margin: 50px;
+  }
+
+  .login,
+  .register,
+  .logout {
+    margin: auto;
+    border: 1px solid navy;
+    padding: 10px;
+    color: white;
+    background: lightblue;
+    border-radius: 10%;
+    font-weight: bold;
+    float: none;
   }
 }
