@@ -1,0 +1,31 @@
+* {
+  color: navy;
+}
+
+.incorrectCount {
+  color: darkred;
+}
+
+.eachWord {
+  margin: auto;
+  width: 300px;
+  list-style: none;
+  border: 2px solid black;
+  margin-bottom: 25px;
+  background: url("https://user-images.githubusercontent.com/45447942/56239368-a17f5f80-6045-11e9-8ab1-470f4b19d69b.png");
+}
+
+.eachWordContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-inline-start: 0px;
+}
+
+.begin-button {
+  color: blue;
+  margin: 20px;
+  background: white;
+  border: 1px solid navy;
+  border-radius: 35em;
+}
