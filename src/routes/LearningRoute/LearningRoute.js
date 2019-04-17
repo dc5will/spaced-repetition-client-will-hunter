@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import DashboardApiService from "../../services/dashboard-service";
+import DashboardApiService from "../../services/dashboard-api-service";
+import LearningApiService from "../../services/learning-api-service";
 import { Link } from "react-router-dom";
 
 class LearningRoute extends Component {
@@ -9,7 +10,20 @@ class LearningRoute extends Component {
     totalScore: null
   };
 
+  // 1) displays the current score and h2 with next word
+  // 2) displays a form for submitting the next guess
+  // 3) displays the correct and incorrect count for this word
+  // GET request from /api/language/head returns expected response:
+  // {
+  //   "nextWord": "memorize",
+  //   "wordCorrectCount": 0,
+  //   "wordIncorrectCount": 0,
+  //   "totalScore": 0
+  // }
+
   componentDidMount() {
+    LearningApiService.getHead().then(res => console.log(res));
+
     DashboardApiService.getLanguage()
       .then(data => {
         this.setState(

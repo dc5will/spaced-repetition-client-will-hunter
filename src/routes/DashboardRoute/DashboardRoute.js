@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UserContext from "../../contexts/UserContext";
-import DashboardApiService from "../../services/dashboard-service";
+import DashboardApiService from "../../services/dashboard-api-service";
 import { Link } from "react-router-dom";
 import "./DashboardRoute.css";
 

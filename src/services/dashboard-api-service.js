@@ -15,6 +15,7 @@ const DashboardApiService = {
         : res.json()
     )
   }
+
 };
 
 export default DashboardApiService;
