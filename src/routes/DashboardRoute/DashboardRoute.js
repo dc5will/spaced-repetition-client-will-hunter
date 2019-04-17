@@ -32,10 +32,10 @@ class DashboardRoute extends Component {
   createWords() {
     return this.state.words.map(word => {
       return (
-        <li className="eachWord" key={word.id}>
+        <li className="eachWordToLearn" key={word.id}>
           <h4>{word.original}</h4>
-          <p className="correctCount">correct answer count: {word.correct_count}</p>
-          <p className="incorrectCount">incorrect answer count: {word.incorrect_count}</p>
+          <p className="thisCorrectCount">correct answer count: {word.correct_count}</p>
+          <p className="thisIncorrectCount">incorrect answer count: {word.incorrect_count}</p>
         </li>
       );
     });

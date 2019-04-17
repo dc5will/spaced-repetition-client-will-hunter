@@ -1,56 +1,98 @@
 .correct_incorrect_count {
-  margin: 3px;
-  background: none;
-  top: 0;
-  position: absolute;
-  font-size: 0.8em;
+	margin: 3px;
+	background: none;
+	float: bottom;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.thisCorrectCount, .thisIncorrectCount {
+	background: none;
+}
+
+.correctCount {
+	font-weight: bold;
+	font-size: 2em;
+	color: green;
 }
 
 .eachQuizWord {
-  margin: auto;
-  width: 500px;
-  height: 250px;
-  list-style: none;
-  border: 2px solid black;
-  margin-bottom: 25px;
-  background: url("https://user-images.githubusercontent.com/45447942/56239368-a17f5f80-6045-11e9-8ab1-470f4b19d69b.png");
+	margin: auto;
+	width: 300px;
+	height: 175px;
+	list-style: none;
+	border: 2px solid black;
+	margin-bottom: 25px;
+	background: url("https://user-images.githubusercontent.com/45447942/56239368-a17f5f80-6045-11e9-8ab1-470f4b19d69b.png");
+}
+
+h3 {
+	font-size: 2em;
+	background: none;
+}
+
+.quizWordAnswer {
+	margin: auto;
+	width: 500px;
+	height: 260px;
+	list-style: none;
+	border: 2px solid black;
+	margin-bottom: 25px;
+	background: url("https://user-images.githubusercontent.com/45447942/56239368-a17f5f80-6045-11e9-8ab1-470f4b19d69b.png");
 }
 
 .eachQuizWordContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding-inline-start: 0px;
-  position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	padding-inline-start: 0px;
+	position: relative;
 }
 
 .quizAnswer {
-  background: none;
+	background: none;
 }
 
 .quiz {
-  background: none;
+	background: rgb(248, 226, 226);
+	margin-bottom: 20px;
 }
 
 .userTranslationInput {
-  border: 1px solid black;
+	border: 1px solid black;
+}
+
+.quizResponse {
+	background: none;
 }
 
 button {
-  color: blue;
-  margin: 20px;
-  background: white;
-  border: 1px solid navy;
-  border-radius: 35em;
+	color: blue;
+	margin: 20px;
+	background: white;
+	border: 1px solid navy;
+	border-radius: 35em;
 }
 
 .totalCorrectAnswers {
-  background: none;
-  border: none;
+	background: none;
+	border: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .correct_incorrect_count {
-    font-size: 0.5em;
-  }
+.response {
+	font-size: 1em;
+	color: darkred;
+	font-weight: bold;
+	background: white;
+}
+
+.userTranslation {
+	background: none;
+	padding-top: 50px;
+	font-size: 3em;
+	margin: auto;
+}
+
+.testnextword {
+	display: none;
 }
