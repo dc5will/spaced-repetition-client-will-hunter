@@ -135,15 +135,6 @@ class LearningRoute extends Component {
 		}
 	}
 
-	onNextClick() {
-		return this.setState({ newOrCurrent: 'new' })
-	}
-
-	onSubmitClick() {
-		return this.setState({ newOrCurrent: 'current' })
-	}
-
-
 	render() {
 		let rightOrWrong = null;
 		if (this.state.words) {
@@ -206,7 +197,7 @@ class LearningRoute extends Component {
 						<h3 className="incorrectPhrase" id="incorrectPhrase">{rightOrWrong !== null ? rightOrWrong === false ? this.state.incorrectPhrase : null : this.state.incorrectPhrase}</h3>
 						<p className="correctResponse" id="correctResponse">{rightOrWrong !== null ? rightOrWrong === true ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-correct-guess and you chose test-guess-correct!'}</p>
 						<p className="incorrectResponse" id="incorrectResponse">{rightOrWrong !== null ? rightOrWrong === false ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-incorrect-guess and you chose test-guess-incorrect!'}</p>
-						<button onClick={this.onNextClick()} className="next" type="submit">
+						<button onClick={() => this.setState({ newOrCurrent: 'new' })} className="next" type="submit">
 							{this.state.words ?
 								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
 						</button>
@@ -217,7 +208,7 @@ class LearningRoute extends Component {
 					<input type="text" id="learn_guess_input" className="learn_guess_input" required />
 					<br />
 					<br />
-					<button onClick={this.onSubmitClick()} type="submit">Submit your answer</button>
+					<button onClick={() => this.setState({ newOrCurrent: 'current' })} type="submit">Submit your answer</button>
 				</form>
 				<Link to={'/'}>Back to Dashboard</Link>
 			</div>
