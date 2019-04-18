@@ -16,16 +16,6 @@
 	color: green;
 }
 
-.eachQuizWord {
-	margin: auto;
-	width: 300px;
-	height: 175px;
-	list-style: none;
-	border: 2px solid black;
-	margin-bottom: 25px;
-	background: url("https://user-images.githubusercontent.com/45447942/56239368-a17f5f80-6045-11e9-8ab1-470f4b19d69b.png");
-}
-
 h3 {
 	font-size: 2em;
 	background: none;
@@ -39,6 +29,11 @@ h3 {
 	border: 2px solid black;
 	margin-bottom: 25px;
 	background: url("https://user-images.githubusercontent.com/45447942/56239368-a17f5f80-6045-11e9-8ab1-470f4b19d69b.png");
+	visibility: hidden;
+}
+
+.eachQuizTitle, .quizWordTitle {
+	list-style: none;
 }
 
 .eachQuizWordContainer {
@@ -93,6 +88,14 @@ button {
 	margin: auto;
 }
 
-.testnextword, .test-next-word-from-generic-guess {
+.Testnextword, .test-next-word-from-generic-guess {
 	display: none;
+}
+
+.correctPhrase, .incorrectPhrase {
+	visibility: hidden;
+}
+
+.correctResponse, .incorrectResponse {
+	visibility: hidden;
 }

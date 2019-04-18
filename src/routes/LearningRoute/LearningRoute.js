@@ -13,7 +13,9 @@ class LearningRoute extends Component {
 		currentWordIdx: 0,
 		answer: false,
 		correctPhrase: 'You were correct! :D',
-		incorrectPhrase: 'Good try, but not quite right :('
+		incorrectPhrase: 'Good try, but not quite right :(',
+		createWords: false,
+		newOrCurrent: null
 	};
 
 	componentDidMount() {
@@ -41,22 +43,39 @@ class LearningRoute extends Component {
 					}
 				);
 			})
-			.catch(res => this.setState({ error: res.error }));
-
+			.catch(res => this.setState({ error: res.error }))
 	}
 
 	handleSubmitNewWord = ev => {
 		ev.preventDefault();
+		this.setState({ createWords: true });
 		this.setState({ rightOrWrong: null });
 		this.setState({ answer: false });
 		this.setState({ error: null });
 		this.setState({ currentWordIdx: this.state.currentWordIdx + 1 });
+		document.getElementById("correctPhrase").style.visibility = "hidden";
+		document.getElementById("incorrectPhrase").style.visibility = "hidden";
+		document.getElementById("correctResponse").style.visibility = "hidden";
+		document.getElementById("incorrectResponse").style.visibility = "hidden";
+		document.getElementById("quizWordAnswer").style.visibility = "hidden";
+		document.getElementById("quizForm").style.visibility = "visible"
 	};
 
 	handleSubmit = ev => {
 		ev.preventDefault();
+		if (this.state.newOrCurrent === 'current') {
+			return this.handleSubmitCurrentWord(ev);
+		}
+		else if (this.state.newOrCurrent === 'new') {
+			return this.handleSubmitNewWord(ev);
+		}
+	}
+
+	handleSubmitCurrentWord = ev => {
+		ev.preventDefault();
 
 		this.setState({ answer: true });
+		this.setState({ createWords: false });
 		this.setState({ currentWord: ev.target.learn_guess_input.value }, function () {
 			console.log(this.state.currentWord);
 		});
@@ -80,30 +99,25 @@ class LearningRoute extends Component {
 								console.log(this.state.words);
 							}
 						);
-						return data;
 					})
-					.catch(res => this.setState({ error: res.error }));
+					.catch(res => this.setState({ error: res.error }))
+					.then(document.getElementById("quizForm").reset())
+					.then(document.getElementById("correctPhrase").style.visibility = "visible")
+					.then(document.getElementById("incorrectPhrase").style.visibility = "visible")
+					.then(document.getElementById("correctResponse").style.visibility = "visible")
+					.then(document.getElementById("incorrectResponse").style.visibility = "visible")
+					.then(document.getElementById("quizWordAnswer").style.visibility = "visible")
+					.then(document.getElementById("quizForm").style.visibility = "hidden");
 			})
 	}
 
 	handleAnswer() {
 		if (this.state.currentWordIdx < this.state.words.length) {
 			return (
-				<li className="quizWordAnswer" key={this.state.words[this.state.currentWordIdx].id}>
+				<li className="quizWordTitle" key={this.state.words[this.state.currentWordIdx].id}>
 					<h3>{this.state.words[this.state.currentWordIdx].translation}</h3>
 					<br />
-					<form className="quizResponse" onSubmit={this.handleSubmitNewWord}>
-						<br />
-						<br />
-						{this.state.currentWordIdx + 1 < this.state.words.length ? (
-							<button className="next" type="submit">
-								{' '}
-								Next Word: {this.state.words[this.state.currentWordIdx + 1].original}
-							</button>
-						) : (
-								<button type="submit">Finish</button>
-							)}
-					</form>
+
 				</li>
 			);
 		} else {
@@ -114,29 +128,42 @@ class LearningRoute extends Component {
 	createWords() {
 		if (this.state.currentWordIdx < this.state.words.length) {
 			return (
-				<li className="eachQuizWord" key={this.state.words[this.state.currentWordIdx].id}>
+				<li className="eachQuizTitle" key={this.state.words[this.state.currentWordIdx].id}>
 					<h2 className="userTranslation">{this.state.words[this.state.currentWordIdx].original}</h2>
 				</li>
 			);
-		} else {
-			return <h2>You're all out of words!</h2>;
 		}
 	}
 
+	onNextClick() {
+		return this.setState({ newOrCurrent: 'new' })
+	}
+
+	onSubmitClick() {
+		return this.setState({ newOrCurrent: 'current' })
+	}
+
+
 	render() {
-		// let rightOrWrong = null;
-		// if (this.state.words) {
-		// 	if (this.state.currentWordIdx < this.state.words.length) {
-		// 		if (this.state.currentWord && this.state.words[this.state.currentWordIdx].translation) {
-		// 			if (this.state.currentWord === this.state.words[this.state.currentWordIdx].translation) {
-		// 				rightOrWrong = true
-		// 			}
-		// 			else if (this.state.currentWord !== this.state.words[this.state.currentWordIdx].translation) {
-		// 				rightOrWrong = false
-		// 			}
-		// 		}
-		// 	}
-		// }
+		let rightOrWrong = null;
+		if (this.state.words) {
+			if (this.state.currentWordIdx < this.state.words.length) {
+				if (this.state.currentWord && this.state.words[this.state.currentWordIdx].translation) {
+					if (this.state.createWords === false) {
+						if (this.state.currentWord === this.state.words[this.state.currentWordIdx].translation) {
+							rightOrWrong = true
+						}
+						else if (this.state.currentWord !== this.state.words[this.state.currentWordIdx].translation) {
+							rightOrWrong = false
+						}
+					}
+					else {
+						rightOrWrong = null
+					}
+				}
+			}
+		}
+
 		return (
 			<div>
 				<h2 className="totalCorrectAnswers">Translate the word:</h2>
@@ -165,21 +192,32 @@ class LearningRoute extends Component {
 				{this.state.words ? (
 					this.state.answer === false ? (
 						<section>
-							<ul className="eachQuizWordContainer">{this.createWords()}</ul>
+							<ul className="titleContainer">{this.createWords()}</ul>
 						</section>
 					) : (
-							<ul className="eachQuizWordContainer">{this.handleAnswer()}</ul>
+							<section>
+								<ul className="titleContainer">{this.handleAnswer()}</ul>
+							</section>
 						)
 				) : null}
-				{/* <h3>{rightOrWrong === true ? this.state.correctPhrase : this.state.incorrectPhrase}</h3> */}
-				<form className="quiz" onSubmit={this.handleSubmit}>
+				<form className="quiz" id="quizForm" onSubmit={this.handleSubmit}>
+					<div className="quizWordAnswer" id="quizWordAnswer">
+						<h3 className="correctPhrase" id="correctPhrase">{rightOrWrong !== null ? rightOrWrong === true ? this.state.correctPhrase : null : this.state.correctPhrase}</h3>
+						<h3 className="incorrectPhrase" id="incorrectPhrase">{rightOrWrong !== null ? rightOrWrong === false ? this.state.incorrectPhrase : null : this.state.incorrectPhrase}</h3>
+						<p className="correctResponse" id="correctResponse">{rightOrWrong !== null ? rightOrWrong === true ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-correct-guess and you chose test-guess-correct!'}</p>
+						<p className="incorrectResponse" id="incorrectResponse">{rightOrWrong !== null ? rightOrWrong === false ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-incorrect-guess and you chose test-guess-incorrect!'}</p>
+						<button onClick={this.onNextClick()} className="next" type="submit">
+							{this.state.words ?
+								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
+						</button>
+					</div>
 					<label htmlFor="learn_guess_input" className="quizAnswer">
 						What's the translation for this word?
 					</label>
 					<input type="text" id="learn_guess_input" className="learn_guess_input" required />
 					<br />
 					<br />
-					<button type="submit">Submit your answer</button>
+					<button onClick={this.onSubmitClick()} type="submit">Submit your answer</button>
 				</form>
 				<Link to={'/'}>Back to Dashboard</Link>
 			</div>
