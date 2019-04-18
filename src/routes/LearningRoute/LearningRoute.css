@@ -93,6 +93,6 @@ button {
 	margin: auto;
 }
 
-.testnextword {
+.testnextword, .test-next-word-from-generic-guess {
 	display: none;
 }

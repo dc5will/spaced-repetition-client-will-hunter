@@ -140,23 +140,26 @@ class LearningRoute extends Component {
 		return (
 			<div>
 				<h2 className="totalCorrectAnswers">Translate the word:</h2>
-				<span className="testnextword">
+				<span className="Testnextword">
 					Testnextword{this.state.words ? (
 						this.state.currentWordIdx + 1 < this.state.words.length ? (
 							<span> {this.state.words[this.state.currentWordIdx + 1].original}</span>
 						) : null
 					) : null}
 				</span>
+				<span className="test-next-word-from-generic-guess">
+					test-next-word-from-generic-guess
+				</span>
 				<section className="correct_incorrect_count">
 					<section className="thisCorrectCount">
-						You have answered this word correctly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].correct_count : 0 : 0} times.
+						You have answered this word correctly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].correct_count : 222 : 222} times.
 					</section>
 					<p className="DisplayScore">
 						Your total score is:{' '}
-						{this.state.totalScore}
+						{this.state.totalScore ? this.state.totalScore : 999}
 					</p>
 					<section className="thisIncorrectCount">
-						You have answered this word incorrectly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].incorrect_count : 0 : 0} times.
+						You have answered this word incorrectly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].incorrect_count : 333 : 333} times.
 					</section>
 				</section>
 				{this.state.words ? (
@@ -170,10 +173,10 @@ class LearningRoute extends Component {
 				) : null}
 				{/* <h3>{rightOrWrong === true ? this.state.correctPhrase : this.state.incorrectPhrase}</h3> */}
 				<form className="quiz" onSubmit={this.handleSubmit}>
-					<label for="learn_guess_input" className="quizAnswer">
+					<label htmlFor="learn_guess_input" className="quizAnswer">
 						What's the translation for this word?
 					</label>
-					<input type="text" id="learn_guess_input" className="learn-guess-input" required />
+					<input type="text" id="learn_guess_input" className="learn_guess_input" required />
 					<br />
 					<br />
 					<button type="submit">Submit your answer</button>
