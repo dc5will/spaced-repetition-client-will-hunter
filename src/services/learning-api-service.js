@@ -24,7 +24,7 @@ const LearningApiService = {
         authorization: `Bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({ input })
+      body: JSON.stringify({ guess: input })
     }).then(res =>
       (!res.ok)
         ? res.json().then(e => Promise.reject(e))
