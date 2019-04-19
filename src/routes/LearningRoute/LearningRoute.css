@@ -1,7 +1,7 @@
 .correct_incorrect_count {
 	margin: 3px;
 	background: none;
-	float: bottom;
+	/* float: bottom; */
 	display: flex;
 	justify-content: space-evenly;
 }
@@ -12,12 +12,6 @@
 
 .titleContainer {
 	padding: 0;
-}
-
-.correctCount {
-	font-weight: bold;
-	font-size: 2em;
-	color: green;
 }
 
 h3 {
@@ -44,29 +38,18 @@ h3 {
 	list-style: none;
 }
 
-.eachQuizWordContainer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
-	padding-inline-start: 0px;
-	position: relative;
-}
-
 .quizAnswer, .nextWord {
 	background: none;
 }
 
 .quiz {
-	background: rgb(248, 226, 226);
+	/* background: rgb(248, 226, 226); */
+	display: block;
 	margin-bottom: 20px;
 }
 
-.userTranslationInput {
-	border: 1px solid black;
-}
-
-.quizResponse {
-	background: none;
+.submitAnswer {
+	font-size: 16px;
 }
 
 button {
@@ -80,13 +63,6 @@ button {
 .totalCorrectAnswers {
 	background: none;
 	border: none;
-}
-
-.response {
-	font-size: 1em;
-	color: darkred;
-	font-weight: bold;
-	background: white;
 }
 
 .userTranslation {

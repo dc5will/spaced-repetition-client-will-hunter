@@ -2,10 +2,6 @@
   color: navy;
 }
 
-.incorrectCount {
-  color: darkred;
-}
-
 .eachWordToLearn {
   margin: auto;
   width: 300px;
@@ -28,4 +24,5 @@
   background: white;
   border: 1px solid navy;
   border-radius: 35em;
+  font-size: 20px;
 }
