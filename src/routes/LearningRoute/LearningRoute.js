@@ -212,11 +212,11 @@ class LearningRoute extends Component {
 							{this.state.words ?
 								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
 						</button>
-						<p className="nextWord">Next Word: {this.state.words ? (
+						<section className="nextWord">Next Word: {this.state.words ? (
 							this.state.currentWordIdx + 1 < this.state.words.length ? (
 								<p className="nextWord">{this.state.words[this.state.currentWordIdx + 1].original}</p>
 							) : null
-						) : null}</p>
+						) : null}</section>
 					</div>
 				</form>
 				<Link to={'/'}>Back to Dashboard</Link>
