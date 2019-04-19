@@ -208,6 +208,7 @@ class LearningRoute extends Component {
 							{this.state.words ?
 								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
 						</button>
+						<p>Next Word: {this.state.words[this.state.currentWordIdx + 1].original}</p>
 					</div>
 				</form>
 				<Link to={'/'}>Back to Dashboard</Link>
