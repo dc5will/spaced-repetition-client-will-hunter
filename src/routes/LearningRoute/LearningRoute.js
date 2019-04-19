@@ -104,8 +104,10 @@ class LearningRoute extends Component {
 					.then(document.getElementById("incorrectPhrase").style.visibility = "visible")
 					.then(document.getElementById("correctResponse").style.visibility = "visible")
 					.then(document.getElementById("incorrectResponse").style.visibility = "visible")
-					.then(document.getElementById("quizWordAnswer").style.visibility = "visible")
 					.then(document.getElementById("quizForm").style.visibility = "hidden");
+				if (this.state.currentWordIdx < this.state.words.length) {
+					document.getElementById("quizWordAnswer").style.visibility = "visible"
+				}
 			})
 	}
 
