@@ -19,35 +19,6 @@ class LearningRoute extends Component {
 	};
 
 	componentDidMount() {
-		LearningApiService.getHead().then(res => console.log(res));
-
-		DashboardApiService.getLanguage()
-			.then(data => {
-				this.setState(
-					{
-						words: data.words
-					},
-					function () {
-						console.log(this.state.words);
-					}
-				);
-				return data;
-			})
-			.then(data => {
-				this.setState(
-					{
-						totalScore: data.language.total_score
-					},
-					function () {
-						console.log(this.state.totalScore);
-					}
-				);
-			})
-			.catch(res => this.setState({ error: res.error }))
-	}
-
-	handleSubmitNewWord = ev => {
-		ev.preventDefault();
 		DashboardApiService.getLanguage()
 			.then(data => {
 				this.setState(
@@ -58,7 +29,23 @@ class LearningRoute extends Component {
 						// console.log(this.state.words);
 					}
 				);
+				return data;
 			})
+			.then(data => {
+				this.setState(
+					{
+						totalScore: data.language.total_score
+					},
+					function () {
+						// console.log(this.state.totalScore);
+					}
+				);
+			})
+			.catch(res => this.setState({ error: res.error }))
+	}
+
+	handleSubmitNewWord = ev => {
+		ev.preventDefault();
 		this.setState({ createWords: true });
 		this.setState({ rightOrWrong: null });
 		this.setState({ answer: false });
@@ -100,6 +87,17 @@ class LearningRoute extends Component {
 						// console.log(this.state.totalScore);
 					}
 				)
+				DashboardApiService.getLanguage()
+					.then(data => {
+						this.setState(
+							{
+								words: data.words
+							},
+							function () {
+								// console.log(this.state.words);
+							}
+						);
+					})
 					.catch(res => this.setState({ error: res.error }))
 					.then(document.getElementById("quizForm").reset())
 					.then(document.getElementById("correctPhrase").style.visibility = "visible")
