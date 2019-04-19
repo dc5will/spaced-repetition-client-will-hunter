@@ -100,12 +100,12 @@ class LearningRoute extends Component {
 					})
 					.catch(res => this.setState({ error: res.error }))
 					.then(document.getElementById("quizForm").reset())
-					.then(document.getElementById("correctPhrase").style.visibility = "visible")
-					.then(document.getElementById("incorrectPhrase").style.visibility = "visible")
-					.then(document.getElementById("correctResponse").style.visibility = "visible")
-					.then(document.getElementById("incorrectResponse").style.visibility = "visible")
 					.then(document.getElementById("quizForm").style.visibility = "hidden");
 				if (this.state.currentWordIdx < this.state.words.length) {
+					document.getElementById("correctPhrase").style.visibility = "visible"
+					document.getElementById("incorrectPhrase").style.visibility = "visible"
+					document.getElementById("correctResponse").style.visibility = "visible"
+					document.getElementById("incorrectResponse").style.visibility = "visible"
 					document.getElementById("quizWordAnswer").style.visibility = "visible"
 				}
 			})
