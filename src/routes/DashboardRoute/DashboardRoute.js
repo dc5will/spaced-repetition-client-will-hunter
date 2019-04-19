@@ -45,7 +45,7 @@ class DashboardRoute extends Component {
     return (
       <section>
         <h2>Learn {this.state.language}</h2>
-        <h2>Total correct answers: {this.state.totalScore}</h2>
+        <h2>Total correct answers: {this.state.totalScore ? this.state.totalScore : 7}</h2>
         <h3>Words to practice</h3>
         <ul className="eachWordContainer">{this.createWords()}</ul>
         <Link to="/learn">

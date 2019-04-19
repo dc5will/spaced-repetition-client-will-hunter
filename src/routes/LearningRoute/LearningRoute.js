@@ -19,6 +19,8 @@ class LearningRoute extends Component {
 	};
 
 	componentDidMount() {
+		LearningApiService.getHead();
+
 		DashboardApiService.getLanguage()
 			.then(data => {
 				this.setState(
@@ -101,12 +103,14 @@ class LearningRoute extends Component {
 					.catch(res => this.setState({ error: res.error }))
 					.then(document.getElementById("quizForm").reset())
 					.then(document.getElementById("quizForm").style.visibility = "hidden");
-				if (this.state.currentWordIdx < this.state.words.length) {
-					document.getElementById("correctPhrase").style.visibility = "visible"
-					document.getElementById("incorrectPhrase").style.visibility = "visible"
-					document.getElementById("correctResponse").style.visibility = "visible"
-					document.getElementById("incorrectResponse").style.visibility = "visible"
-					document.getElementById("quizWordAnswer").style.visibility = "visible"
+				if (this.state.words) {
+					if (this.state.currentWordIdx < this.state.words.length) {
+						document.getElementById("correctPhrase").style.visibility = "visible"
+						document.getElementById("incorrectPhrase").style.visibility = "visible"
+						document.getElementById("correctResponse").style.visibility = "visible"
+						document.getElementById("incorrectResponse").style.visibility = "visible"
+						document.getElementById("quizWordAnswer").style.visibility = "visible"
+					}
 				}
 			})
 	}
@@ -204,7 +208,7 @@ class LearningRoute extends Component {
 						<h3 className="incorrectPhrase" id="incorrectPhrase">{rightOrWrong !== null ? rightOrWrong === false ? this.state.incorrectPhrase : null : this.state.incorrectPhrase}</h3>
 						<p className="correctResponse" id="correctResponse">{rightOrWrong !== null ? rightOrWrong === true ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-correct-guess and you chose test-guess-correct!'}</p>
 						<p className="incorrectResponse" id="incorrectResponse">{rightOrWrong !== null ? rightOrWrong === false ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-incorrect-guess and you chose test-guess-incorrect!'}</p>
-						<button formNoValidate="formnovalidate" onClick={() => this.setState({ newOrCurrent: 'new' })} className="next" type="submit">
+						<button formNoValidate="formNoValidate" onClick={() => this.setState({ newOrCurrent: 'new' })} className="next" type="submit">
 							{this.state.words ?
 								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
 						</button>
