@@ -4,7 +4,11 @@
 
 ## Live Link
 
-https://spaced-repetition-will-hunter.now.sh/register
+https://spaced-repetition-will-hunter.now.sh
+
+server repo: https://github.com/thinkful-ei-armadillo/spaced-repetition-server-william-hunter
+
+deployed API: https://tranquil-harbor-49659.herokuapp.com/
 
 ## Setup
 
