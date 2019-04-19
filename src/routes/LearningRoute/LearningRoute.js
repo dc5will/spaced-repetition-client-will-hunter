@@ -210,7 +210,7 @@ class LearningRoute extends Component {
 						</button>
 						<p>Next Word: {this.state.words ? (
 							this.state.currentWordIdx + 1 < this.state.words.length ? (
-								<p>{this.state.words[this.state.currentWordIdx + 1].original}</p>
+								<p className="nextWord">{this.state.words[this.state.currentWordIdx + 1].original}</p>
 							) : null
 						) : null}</p>
 					</div>
