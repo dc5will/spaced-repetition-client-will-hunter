@@ -32,6 +32,10 @@ h3 {
 	visibility: hidden;
 }
 
+.learn_guess_input{
+	margin: 10px;
+}
+
 .eachQuizTitle, .quizWordTitle {
 	list-style: none;
 }

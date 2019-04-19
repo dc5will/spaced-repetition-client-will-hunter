@@ -77,7 +77,7 @@ class LearningRoute extends Component {
 		this.setState({ answer: true });
 		this.setState({ createWords: false });
 		this.setState({ currentWord: ev.target.learn_guess_input.value }, function () {
-			console.log(this.state.currentWord);
+			// console.log(this.state.currentWord);
 		});
 		LearningApiService.makeGuess(ev.target.learn_guess_input.value)
 			.then(data => {
@@ -86,7 +86,7 @@ class LearningRoute extends Component {
 						totalScore: data.totalScore
 					},
 					function () {
-						console.log(this.state.totalScore);
+						// console.log(this.state.totalScore);
 					}
 				)
 				DashboardApiService.getLanguage()
@@ -96,7 +96,7 @@ class LearningRoute extends Component {
 								words: data.words
 							},
 							function () {
-								console.log(this.state.words);
+								// console.log(this.state.words);
 							}
 						);
 					})
@@ -170,14 +170,14 @@ class LearningRoute extends Component {
 				</span>
 				<section className="correct_incorrect_count">
 					<section className="thisCorrectCount">
-						You have answered this word correctly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].correct_count : 222 : 222} times.
+						You have answered this word correctly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].correct_count : 0 : 222} times.
 					</section>
 					<p className="DisplayScore">
 						Your total score is:{' '}
 						{this.state.totalScore ? this.state.totalScore : 999}
 					</p>
 					<section className="thisIncorrectCount">
-						You have answered this word incorrectly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].incorrect_count : 333 : 333} times.
+						You have answered this word incorrectly {this.state.words ? this.state.currentWordIdx < this.state.words.length ? this.state.words[this.state.currentWordIdx].incorrect_count : 0 : 333} times.
 					</section>
 				</section>
 				{this.state.words ? (
@@ -192,16 +192,6 @@ class LearningRoute extends Component {
 						)
 				) : null}
 				<form className="quiz" id="quizForm" onSubmit={this.handleSubmit}>
-					<div className="quizWordAnswer" id="quizWordAnswer">
-						<h3 className="correctPhrase" id="correctPhrase">{rightOrWrong !== null ? rightOrWrong === true ? this.state.correctPhrase : null : this.state.correctPhrase}</h3>
-						<h3 className="incorrectPhrase" id="incorrectPhrase">{rightOrWrong !== null ? rightOrWrong === false ? this.state.incorrectPhrase : null : this.state.incorrectPhrase}</h3>
-						<p className="correctResponse" id="correctResponse">{rightOrWrong !== null ? rightOrWrong === true ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-correct-guess and you chose test-guess-correct!'}</p>
-						<p className="incorrectResponse" id="incorrectResponse">{rightOrWrong !== null ? rightOrWrong === false ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-incorrect-guess and you chose test-guess-incorrect!'}</p>
-						<button onClick={() => this.setState({ newOrCurrent: 'new' })} className="next" type="submit">
-							{this.state.words ?
-								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
-						</button>
-					</div>
 					<label htmlFor="learn_guess_input" className="quizAnswer">
 						What's the translation for this word?
 					</label>
@@ -209,6 +199,16 @@ class LearningRoute extends Component {
 					<br />
 					<br />
 					<button className="submitAnswer" onClick={() => this.setState({ newOrCurrent: 'current' })} type="submit">Submit your answer</button>
+					<div className="quizWordAnswer" id="quizWordAnswer">
+						<h3 className="correctPhrase" id="correctPhrase">{rightOrWrong !== null ? rightOrWrong === true ? this.state.correctPhrase : null : this.state.correctPhrase}</h3>
+						<h3 className="incorrectPhrase" id="incorrectPhrase">{rightOrWrong !== null ? rightOrWrong === false ? this.state.incorrectPhrase : null : this.state.incorrectPhrase}</h3>
+						<p className="correctResponse" id="correctResponse">{rightOrWrong !== null ? rightOrWrong === true ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-correct-guess and you chose test-guess-correct!'}</p>
+						<p className="incorrectResponse" id="incorrectResponse">{rightOrWrong !== null ? rightOrWrong === false ? `The correct translation for ${this.state.words[this.state.currentWordIdx].original} was ${this.state.words[this.state.currentWordIdx].translation} and you chose ${this.state.currentWord}!` : null : 'The correct translation for Testnextword was test-answer-from-incorrect-guess and you chose test-guess-incorrect!'}</p>
+						<button formnovalidate="formnovalidate" onClick={() => this.setState({ newOrCurrent: 'new' })} className="next" type="submit">
+							{this.state.words ?
+								this.state.currentWordIdx + 1 < this.state.words.length ? `Try another word!` : `Try another word!` : `Try another word!`}
+						</button>
+					</div>
 				</form>
 				<Link to={'/'}>Back to Dashboard</Link>
 			</div>
