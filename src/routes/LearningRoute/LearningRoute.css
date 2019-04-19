@@ -10,6 +10,10 @@
 	background: none;
 }
 
+.titleContainer {
+	margin: 0px;
+}
+
 .correctCount {
 	font-weight: bold;
 	font-size: 2em;
