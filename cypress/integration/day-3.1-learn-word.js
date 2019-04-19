@@ -57,7 +57,7 @@ describe(`User story: Presented with word`, function () {
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('button[type=submit]')
+      cy.get('button[type=submit].submitAnswer ')
         .should('have.text', 'Submit your answer')
     })
   })

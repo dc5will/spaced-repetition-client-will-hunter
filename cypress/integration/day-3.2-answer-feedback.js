@@ -46,7 +46,7 @@ describe(`User story: Answer feedback`, function () {
         cy.get('input#learn_guess_input')
           .type(guess)
 
-        cy.get('button').click()
+        cy.get('button.submitAnswer').click()
 
         cy.wait('@postListGuess')
           .then(xhr => {
@@ -70,7 +70,7 @@ describe(`User story: Answer feedback`, function () {
 
       cy.login().visit(`/learn`).wait('@languageHeadRequest')
       cy.get('input#learn_guess_input').type(guess)
-      cy.get('form').submit().wait('@postListGuessIncorrect')
+      cy.get('button.submitAnswer').click().get('form').submit().wait('@postListGuessIncorrect')
     })
 
     it(`displays score and feedback the word was incorrect`, () => {
@@ -124,7 +124,7 @@ describe(`User story: Answer feedback`, function () {
 
       cy.login().visit(`/learn`).wait('@languageHeadRequest')
       cy.get('input#learn_guess_input').type(guess)
-      cy.get('form').submit().wait('@postListGuessCorrect')
+      cy.get('button.submitAnswer').click().get('form').submit().wait('@postListGuessCorrect')
     })
 
     it(`gives feedback the word was correct`, () => {

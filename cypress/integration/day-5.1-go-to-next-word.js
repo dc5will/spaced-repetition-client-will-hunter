@@ -28,11 +28,11 @@ describe(`User story: Go to next word`, function () {
 
     cy.login().visit(`/learn`).wait('@languageHeadRequest')
     cy.get('input#learn_guess_input').type('anything')
-    cy.get('form').submit().wait('@postListGuess')
+    cy.get('button.submitAnswer').click().get('form').submit().get('button.next').click().get('form').submit().wait('@postListGuess')
   })
 
   it(`displays another word after clicking the 'next' button`, () => {
-    cy.get('main button').click()
+    cy.get('button.submitAnswer').click().get('form').submit().get('button.next').click().get('form').submit()
 
     cy.fixture('language-guess-generic.json')
       .then(languageHeadFixture => {
@@ -57,7 +57,7 @@ describe(`User story: Go to next word`, function () {
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('button[type=submit]')
+      cy.get('button[type=submit].submitAnswer')
         .should('have.text', 'Submit your answer')
     })
   })

@@ -208,7 +208,7 @@ class LearningRoute extends Component {
 					<input type="text" id="learn_guess_input" className="learn_guess_input" required />
 					<br />
 					<br />
-					<button onClick={() => this.setState({ newOrCurrent: 'current' })} type="submit">Submit your answer</button>
+					<button className="submitAnswer" onClick={() => this.setState({ newOrCurrent: 'current' })} type="submit">Submit your answer</button>
 				</form>
 				<Link to={'/'}>Back to Dashboard</Link>
 			</div>
