@@ -10,7 +10,7 @@ Learn Spanish through the use of the spaced repetition technique. Words that you
 
 [Live Demo](https://spaced-repetition-will-hunter.now.sh)
 
-[server Repo](https://github.com/thinkful-ei-armadillo/spaced-repetition-server-william-hunter)
+[Server Repo](https://github.com/thinkful-ei-armadillo/spaced-repetition-server-william-hunter)
 
 ## Technologies
 
