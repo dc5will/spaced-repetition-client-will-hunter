@@ -34,8 +34,12 @@ class DashboardRoute extends Component {
       return (
         <li className="eachWordToLearn" key={word.id}>
           <h4>{word.original}</h4>
-          <p className="thisCorrectCount">correct answer count: {word.correct_count}</p>
-          <p className="thisIncorrectCount">incorrect answer count: {word.incorrect_count}</p>
+          <p className="thisCorrectCount">
+            correct answer count: {word.correct_count}
+          </p>
+          <p className="thisIncorrectCount">
+            incorrect answer count: {word.incorrect_count}
+          </p>
         </li>
       );
     });
@@ -45,7 +49,7 @@ class DashboardRoute extends Component {
     return (
       <section>
         <h2>Learn {this.state.language}</h2>
-        <h2>Total correct answers: {this.state.totalScore ? this.state.totalScore : 7}</h2>
+        <h2>Total correct answers: {this.state.totalScore}</h2>
         <h3>Words to practice</h3>
         <ul className="eachWordContainer">{this.createWords()}</ul>
         <Link to="/learn">
