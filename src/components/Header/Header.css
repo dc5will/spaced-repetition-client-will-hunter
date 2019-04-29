@@ -14,7 +14,7 @@ h1 {
   border-width: 100%;
   border: 3px double blue;
   margin: 20px;
-  padding: 5px;
+  padding: 15px;
   background: white;
 }
 
@@ -28,7 +28,6 @@ h1 {
   background: lightblue;
   border-radius: 10%;
   font-weight: bold;
-  float: right;
 }
 
 .userName {
