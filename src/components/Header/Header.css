@@ -43,12 +43,11 @@ nav {
 
 @media only screen and (max-width: 600px) {
   .spacedRepetition {
-    font-size: 10pt;
+    font-size: 15pt;
     color: rgb(147, 215, 238);
-    border-width: 100%;
     border: 3px double blue;
     margin: 20px;
-    padding: 5px;
+    padding: 15px;
     background: white;
   }
 
