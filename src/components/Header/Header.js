@@ -5,52 +5,56 @@ import UserContext from "../../contexts/UserContext";
 import "./Header.css";
 
 class Header extends Component {
-  static contextType = UserContext;
+  static contextType = UserContext
 
   handleLogoutClick = () => {
-    this.context.processLogout();
-  };
+    this.context.processLogout()
+  }
 
   renderLogoutLink() {
     return (
-      <div className='logged-in-header'>
-        <span className="userName">Hello {this.context.user.name}!</span>
-        <nav>
-          <Link className="logout" onClick={this.handleLogoutClick} to="/login">
+      <div>
+        <span className="header-username">
+          <i className="fas fa-user"/>
+          {this.context.user.name}
+        </span>
+        <nav className="header-navigation">
+          <Link className="logout-link"
+            onClick={this.handleLogoutClick}
+            to='/login'>
             Logout
           </Link>
         </nav>
       </div>
-    );
+    )
   }
 
   renderLoginLink() {
     return (
-      <nav className='logged-out-header'>
-        <Link className="login" to="/login">
-          Login
-        </Link>{" "}
-        <Link className="register" to="/register">
-          Sign up
-        </Link>
+      <nav className="header-navigation">
+        <Link className="login-link" to='/login'>Login</Link>
+        {' '}
+        <Link className="register-link" to='/register'>Sign up</Link>
       </nav>
-    );
+    )
   }
 
   render() {
     return (
-      <header>
-        <h1>
-          <Link className="spacedRepetition" to="/">
-            Spaced repetition
-          </Link>
-        </h1>
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+      <header role="banner" className="main-header">
+        <div className="header-container" >
+          <h1 className="header-title">
+            <Link className="header-title-link" to='/'>
+              Spaced repetition
+            </Link>
+          </h1>
+          {TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()}
+          </div>
       </header>
     );
   }
 }
 
-export default Header;
+export default Header

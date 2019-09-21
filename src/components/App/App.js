@@ -8,24 +8,25 @@ import LoginRoute from '../../routes/LoginRoute/LoginRoute'
 import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute'
 import LearningRoute from '../../routes/LearningRoute/LearningRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
+import ErrorPage from '../ErrorPage/ErrorPage';
 import './App.css'
+import './KeyFrames.css'
 
 export default class App extends Component {
-  state = { hasError: false }
+  state = { error: null }
 
   static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
+    return { error: error }
   }
 
   render() {
-    const { hasError } = this.state
+    const { error } = this.state
     return (
       <div className='App'>
         <Header />
-        <main>
-          {hasError && (
-            <p className='error'>There was an error! Oh no!</p>
+        <main role="main">
+          {error && (
+            <ErrorPage error={error}/>
           )}
           <Switch>
             <PrivateRoute
@@ -54,3 +55,4 @@ export default class App extends Component {
     );
   }
 }
+

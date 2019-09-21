@@ -1,9 +1,46 @@
-* {
-  background: white;
+a.blue-button{
+  text-decoration: none;
 }
 
-a {
-  text-decoration: none;
-  padding: 1rem;
-  color: black;
+.blue-button{
+  background-color: #0197f6;
+  border: none; 
+  border-bottom: 4px solid #1a53bb;
+  border-radius: 15px; 
+  color: white; 
+  text-transform: uppercase; 
+  outline: none; 
+  font-size: 14px; 
+  padding: 12px; 
+  font-weight: 800; 
+  font-family: 'Nunito', sans-serif; 
+}
+
+.blue-button:hover{
+  cursor: pointer;
+}
+
+.blue-button:hover, .blue-button:focus {
+  background-color: rgb(70, 184, 255);  
+}
+
+.fas{
+  margin-right: 10px;
+}
+
+.loading-text{
+  text-align: center;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.fade-in{
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
 }

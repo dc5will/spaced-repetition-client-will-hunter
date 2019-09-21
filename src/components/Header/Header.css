@@ -1,70 +1,79 @@
-.header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.main-header{
+  background-color: #0197f6;
+  margin-bottom: 50px; 
+  padding:10px;
 }
 
-h1 {
-  background: rgb(248, 226, 226);
-  border: 25px solid rgb(248, 226, 226);
+.header-navigation{
+  display: inline-block; 
 }
 
-.spacedRepetition {
-  color: rgb(147, 215, 238);
-  border-width: 100%;
-  border: 3px double blue;
-  margin: 20px;
-  padding: 15px;
-  background: white;
+.login-link, .register-link, .logout-link, .header-username{
+  color: white; 
+  text-decoration: none; 
+  margin-left: 20px; 
+  font-weight: 800;
+  height: 100px;
 }
 
-.login,
-.register,
-.logout {
-  margin: 5px;
-  border: 1px solid navy;
-  padding: 10px;
-  color: white;
-  background: lightblue;
-  border-radius: 10%;
-  font-weight: bold;
+.header-username{
+  font-size: 16px;
 }
 
-.userName {
-  background: none;
-  color: navy;
-  font-size: 20px;
+.login-link, .register-link, .logout-link{
+  font-size: 18px;  
 }
 
-nav {
-  margin: 50px;
-  margin-bottom: 100px;
+
+.login-link:hover, .register-link:hover, .logout-link:hover,
+.login-link:focus, .register-link:focus, .logout-link:focus{
+  border-bottom: 2px solid white;
 }
 
-@media only screen and (max-width: 600px) {
-  .spacedRepetition {
-    font-size: 15pt;
-    color: rgb(147, 215, 238);
-    border: 3px double blue;
-    margin: 20px;
-    padding: 15px;
-    background: white;
+.header-container{ 
+  max-width: 1000px; 
+  margin: 0 auto;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+
+.header-title-link{
+  color: white; 
+  text-decoration: none; 
+  font-weight: 900;
+  font-size: 34px; 
+  text-align: left; 
+}
+
+.header-title{
+  margin: 0;
+  display: inline-block;
+}
+
+.header-title-link:focus, .header-title-link:hover{
+  border-bottom: 3px solid white;
+}
+
+@media only screen and (max-width: 760px){
+  .header-container{
+    display: block;
   }
 
-  nav {
-    margin: 50px;
+  .header-title{
+    display: block; 
+  }
+  
+  .header-navigation{
+    display: block;  
   }
 
-  .login,
-  .register,
-  .logout {
-    margin: auto;
-    border: 1px solid navy;
-    padding: 10px;
-    color: white;
-    background: lightblue;
-    border-radius: 10%;
-    font-weight: bold;
-    float: none;
+  .header-title-link{
+    font-size: 30px;
+  }
+
+  .header-title{
+    margin-bottom: 10px;
   }
 }
