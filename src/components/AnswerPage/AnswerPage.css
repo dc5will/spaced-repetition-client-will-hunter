@@ -11,11 +11,12 @@
 }
 
 .DisplayScore{
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   font-weight: 900; 
   font-size: 24px; 
   margin-bottom: 0px;
-  color: #058E6E
+  color: #006341
 }
 
 .DisplayFeedback{

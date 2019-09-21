@@ -9,12 +9,11 @@
 }
 
 .login-link, .register-link, .logout-link, .header-username{
-  font-family: 'Roboto';
+  font-family: 'Montserrat';
   text-transform: uppercase;
   color: white; 
   text-decoration: none; 
   margin-left: 20px; 
-  /* font-weight: 800; */
   height: 100px;
 }
 
