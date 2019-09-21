@@ -1,63 +1,79 @@
-import React, { Component } from "react";
-import UserContext from "../../contexts/UserContext";
-import DashboardApiService from "../../services/dashboard-api-service";
-import { Link } from "react-router-dom";
-import "./DashboardRoute.css";
+import React, { Component } from 'react';
+import Config from '../../config'; 
+import TokenService from '../../services/token-service'
+import LanguageContext from '../../contexts/LanguageContext'
+import { Link } from 'react-router-dom'
+import WordsList from '../../components/WordsList/WordsList';
+import './DashboardRoute.css';
+import LoadingPage from '../../components/LoadingPage/LoadingPage';
 
 class DashboardRoute extends Component {
+
+  static contextType = LanguageContext; 
+
   state = {
     error: null,
-    language: null,
-    words: [],
-    totalScore: null
-  };
-
-  static contextType = UserContext;
-
-  calculateTotal() {
-    DashboardApiService.getLanguage().then(data =>
-      this.setState({ totalScore: data.language.total_score })
-    );
+    loading: true
   }
 
-  componentDidMount() {
-    DashboardApiService.getLanguage()
-      .then(data => {
-        this.setState({ language: data.language.name, words: data.words });
+  componentDidMount(){
+    fetch(`${Config.API_ENDPOINT}/language`,
+      {
+        headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
+        }
+      }
+    )
+    .then (res => {
+      return (!res.ok) ? res.json().then(e => Promise.reject(e))
+      : res.json();  
+    })
+    .then(resJson => { 
+      this.context.setLanguage(resJson); 
+      this.setState({
+        loading: null
       })
-      .then(this.calculateTotal())
-      .catch(res => this.setState({ error: res.error }));
-  }
-
-  createWords() {
-    return this.state.words.map(word => {
-      return (
-        <li className="eachWordToLearn" key={word.id}>
-          <h4>{word.original}</h4>
-          <p className="thisCorrectCount">
-            correct answer count: {word.correct_count}
-          </p>
-          <p className="thisIncorrectCount">
-            incorrect answer count: {word.incorrect_count}
-          </p>
-        </li>
-      );
+    })
+    .catch(err => { 
+      if (err.error && err.error === 'Unauthorized request'){
+        this.props.logOut();
+        this.props.history.push('/login'); 
+      }
+      else{
+        this.setState({
+          error: err.error
+        })
+      }
     });
   }
 
   render() {
+    if (this.state.loading){
+      return(
+        <LoadingPage/>
+      )
+    }
+    /* once other languages are added add the url to the DB and load from there */
+    const total_score = this.context.language.total_score;
+
     return (
-      <section>
-        <h2>Learn {this.state.language}</h2>
-        <h2>Total correct answers: {this.state.totalScore}</h2>
-        <h3>Words to practice</h3>
-        <ul className="eachWordContainer">{this.createWords()}</ul>
-        <Link to="/learn">
-          <button className="begin-button">Start practicing</button>
-        </Link>
+      <section className="dashboard-container container fade-in">
+        <header className="dashboard-header">
+          <img className="dashboard-flag" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" alt=""/>
+          <h2 className="dashboard-language-title">{this.context.language.name}</h2>
+        </header>
+        <div className="dashboard-flex">
+          <div className="dashboard-stats">
+            <p>Total correct answers: <span>{total_score ? total_score.toLocaleString() : 0}</span></p>
+            <Link to='/learn' className="blue-button dashboard-practice-button">
+              Start practicing
+            </Link>
+          </div>
+          <WordsList/>
+        </div>
       </section>
     );
   }
 }
 
-export default DashboardRoute;
+export default DashboardRoute

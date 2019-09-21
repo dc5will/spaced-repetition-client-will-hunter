@@ -1,32 +1,131 @@
-* {
-  text-align: center;
+.user-form-top, .user-form-bottom, .user-form-full{
+  border: 3px solid #ebebeb;
 }
 
-.registration {
-  border: 2px dotted navy;
-  position: relative;
-  margin: auto;
-  width: 50%;
-  text-align: center;
+.user-form-top{
+  padding: 10px 30px 30px; 
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px; 
+  border-bottom: none; 
 }
 
-.haveAnAccount:link,
-.haveAnAccount:visited {
-  color: navy;
-}
-
-.name,
-.chooseUserName,
-.choosePassword,
-footer,
-label,
-span,
-.haveAnAccount {
-  background: rgb(248, 226, 226);
-}
-
-footer {
+.user-form-bottom{
+  background-color: #f7f7f7;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px; 
+  border-top: none; 
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.user-form-full{
+  padding: 10px 30px 30px; 
+  border-radius: 25px;
+  border-top-right-radius: 25px; 
+}
+
+.user-form-container{
+  max-width: 400px;
+  padding: 0;
+  margin: 0 auto;
+  
+}
+
+.user-form-button{
+  margin-top: 30px;
+  width: 100%; 
+}
+
+.user-form-header, .user-form-subtitle {
+  padding: 0 10px;
+}
+
+.user-form-header{
+  font-size: 40px; 
+}
+
+.user-form-subtitle{
+  font-weight: 800;
+  color: #767676;
+  font-size: 16px; 
+  margin-bottom: 30px;
+}
+
+
+.form-error{
+  border-radius: 5px;
+  border: 3px solid #D7263D !important;
+}
+
+.main-form-error{
+  background-color: #D7263D;
+  color: white;
+  font-weight: 900;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 0 15px;
+}
+
+.main-form-error{
+  padding: 2px 15px;
+  margin-bottom: 15px;
+}
+
+.main-form-error p {
+  margin: 10px 0;
+}
+
+.user-form-input-container{
+  outline: none;
+  position: relative;
+}
+ 
+.user-form-input-container label{
+  margin: 10px 0;
+  cursor: pointer;
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  font-weight: 800;
+}
+
+.user-form-input{
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  outline: none;
+  margin: -3px 0 0;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #f1f1f1;
+}
+
+.user-form-input:focus{
+  border: 3px solid #0197f6;
+}
+
+.sign-in-link{
+  margin-top: 2px;
+  color:#0197f6;
+  height: 22px;
+  text-decoration: none; 
+}
+
+.sign-in-link:hover {
+  border-bottom: 2px solid #0197f6;
+}
+
+
+@media only screen and (max-width: 760px){
+  .user-form-top, .user-form-bottom, .user-form-full{
+    border: none;
+  }
+
+  .user-form-bottom{
+    border-radius: 0px; 
+    margin-bottom: 0;
+  }
 }

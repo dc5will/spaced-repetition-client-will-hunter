@@ -1,87 +1,90 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Input, Required, Label } from "../Form/Form";
-import AuthApiService from "../../services/auth-api-service";
-import Button from "../Button/Button";
-import "./RegistrationForm.css";
+import React, { Component } from 'react'
+import { Input, Required, Label } from '../Form/Form'
+import AuthApiService from '../../services/auth-api-service'
+import Button from '../Button/Button'
+import './RegistrationForm.css'
 
 class RegistrationForm extends Component {
   static defaultProps = {
-    onRegistrationSuccess: () => {}
-  };
+    onRegistrationSuccess: () => { }
+  }
 
-  state = { error: null };
+  state = { error: null }
 
-  firstInput = React.createRef();
+  firstInput = React.createRef()
 
   handleSubmit = ev => {
-    ev.preventDefault();
-    const { name, username, password } = ev.target;
+    ev.preventDefault()
+    const { name, username, password } = ev.target
     AuthApiService.postUser({
       name: name.value,
       username: username.value,
-      password: password.value
+      password: password.value,
     })
       .then(user => {
-        name.value = "";
-        username.value = "";
-        password.value = "";
-        this.props.onRegistrationSuccess();
+        name.value = ''
+        username.value = ''
+        password.value = ''
+        this.props.onRegistrationSuccess()
       })
       .catch(res => {
-        this.setState({ error: res.error });
-      });
-  };
+        this.setState({ error: res.error })
+      })
+  }
 
   componentDidMount() {
-    this.firstInput.current.focus();
+    this.firstInput.current.focus()
   }
 
   render() {
     const { error } = this.state;
+    const usernameError = error && error.toLowerCase().includes('username');
+    const passwordError = error && error.toLowerCase().includes('password');
     return (
-      <form className="registration" onSubmit={this.handleSubmit}>
-        <div role="alert">{error && <p>{error}</p>}</div>
-        <div className="name">
-          <Label htmlFor="registration-name-input">
-            Enter your name
-            <Required />
+      <form className="user-form"
+        onSubmit={this.handleSubmit}
+      >
+        {error && <div role='alert' className="main-form-error">
+          <p>{error}</p>
+        </div>}
+        <div className="user-form-input-container">
+          <Label htmlFor='registration-name-input'>
+            Enter your name<Required />
           </Label>
-          <Input
+          <Input className="user-form-input"
             ref={this.firstInput}
-            id="registration-name-input"
-            name="name"
+            id='registration-name-input'
+            name='name'
             required
           />
         </div>
-        <div className="chooseUserName">
-          <Label htmlFor="registration-username-input">
-            Choose a username
-            <Required />
+        <div className="user-form-input-container">
+          <Label htmlFor='registration-username-input'>
+            Choose a username<Required />
           </Label>
-          <Input id="registration-username-input" name="username" required />
-        </div>
-        <div className="choosePassword">
-          <Label htmlFor="registration-password-input">
-            Choose a password
-            <Required />
-          </Label>
-          <Input
-            id="registration-password-input"
-            name="password"
-            type="password"
+          <Input className={"user-form-input" + (usernameError ? ' form-error' : '')}
+            id='registration-username-input'
+            name='username'
             required
           />
         </div>
-        <footer>
-          <Button type="submit">Sign up</Button> <br />
-          <Link className="haveAnAccount" to="/login">
-            Already have an account?
-          </Link>
-        </footer>
+        <div className="user-form-input-container">
+          <Label htmlFor='registration-password-input'>
+            Choose a password<Required />
+          </Label>
+          <Input className={"user-form-input" + (passwordError ? ' form-error' : '')}
+            id='registration-password-input'
+            name='password'
+            type='password'
+            required
+          />
+        </div>
+        <Button className="blue-button user-form-button" type='submit'>
+          Sign up
+        </Button>
       </form>
-    );
+    )
   }
 }
 
-export default RegistrationForm;
+export default RegistrationForm
