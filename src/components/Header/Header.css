@@ -8,6 +8,7 @@
   display: inline-block; 
 }
 
+
 .login-link, .register-link, .logout-link, .header-username{
   font-family: 'Montserrat';
   text-transform: uppercase;
@@ -18,7 +19,7 @@
 }
 
 .header-username{
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .login-link, .register-link, .logout-link{
@@ -31,7 +32,7 @@
 }
 
 .header-container{ 
-  max-width: 1000px; 
+  /* max-width: 1000px;  */
   margin: 0 auto;
   display: flex; 
   justify-content: space-between; 
@@ -66,14 +67,26 @@
   }
   
   .header-navigation{
-    display: block;  
+    display: block;
+    text-align: center;
+  }
+
+  .header-navigation a{
+    margin-left: 0px;
+  }
+
+  .header-navigation a:last-child {
+    margin-left: 10px;
   }
 
   .header-title-link{
+    display: block;
+    text-align: center;
     font-size: 30px;
   }
 
   .header-title{
     margin-bottom: 10px;
   }
+
 }
