@@ -1,5 +1,5 @@
 .main-header{
-  background-color: #0197f6;
+  background-color: #AA151B;
   margin-bottom: 50px; 
   padding:10px;
 }
@@ -9,6 +9,7 @@
 }
 
 .login-link, .register-link, .logout-link, .header-username{
+  font-family: 'Raleway';
   color: white; 
   text-decoration: none; 
   margin-left: 20px; 
@@ -24,10 +25,9 @@
   font-size: 18px;  
 }
 
-
 .login-link:hover, .register-link:hover, .logout-link:hover,
 .login-link:focus, .register-link:focus, .logout-link:focus{
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #AA151B;
 }
 
 .header-container{ 
@@ -38,11 +38,11 @@
   align-items: center; 
 }
 
-
 .header-title-link{
-  color: white; 
+  color: #F1BF00; 
+  font-family: 'Flamenco', cursive;
   text-decoration: none; 
-  font-weight: 900;
+  /* font-weight: 900; */
   font-size: 34px; 
   text-align: left; 
 }
@@ -53,7 +53,7 @@
 }
 
 .header-title-link:focus, .header-title-link:hover{
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid #AA151B;
 }
 
 @media only screen and (max-width: 760px){

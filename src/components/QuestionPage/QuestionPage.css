@@ -32,7 +32,7 @@
 }
 
 .question-form-label{
-  color: #767676;
+  color: #000000;
 }
 
 .question-form-label:hover{
@@ -49,15 +49,15 @@
   display: block;
   border-bottom: 3px solid #e5e5e5;
   font-size: 30px;
-  color: #767676;
+  color: #000000;
 }
 
 .question-input:hover, .question-input:focus{
-  border-bottom: 3px solid #0197f6;
+  border-bottom: 3px solid #0039F0;
 }
 
 .question-footer{
-  border-top: 4px solid #ebebeb;
+  border-top: 4px solid #AA151B;
   background-color: #f7f7f7;
   min-height: 150px;
   display: flex; 
@@ -74,11 +74,11 @@
   font-weight: 900; 
   font-size: 24px; 
   margin-bottom: 0px;
-  color: #0197f6
+  color: #0039F0
 }
 
 .question-score{
-  color: #767676;
+  color: #000000;
   margin: 5px; 
 }
 

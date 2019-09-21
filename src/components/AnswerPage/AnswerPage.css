@@ -15,7 +15,7 @@
   font-weight: 900; 
   font-size: 24px; 
   margin-bottom: 0px;
-  color: #0197f6
+  color: #0039F0
 }
 
 .DisplayFeedback{
@@ -37,7 +37,7 @@
 
 .DisplayScore:after, .DisplayFeedback:after{
   content: '';
-  border-top: 3px solid #ebebeb;
+  border-top: 3px solid #AA151B;
   width: 90%;
   height: 0;
   left: 5%;
@@ -47,7 +47,7 @@
 
 .DisplayScore:after, .DisplayFeedback:after{
   content: '';
-  border-top: 3px solid #ebebeb;
+  border-top: 3px solid #AA151B;
   width: 90%;
   height: 0;
   left: 5%;
