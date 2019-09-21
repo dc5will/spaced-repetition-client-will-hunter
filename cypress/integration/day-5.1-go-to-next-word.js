@@ -8,7 +8,7 @@
   - I'm presented with a button that I can click to learn another word
   - When clicking on the button I see the next word to learn
 */
-describe(`User story: Go to next word`, function () {
+describe(`User story: Go to next word`, function() {
   beforeEach(() => {
     cy.server()
       .route({
@@ -27,12 +27,12 @@ describe(`User story: Go to next word`, function () {
       .as('postListGuess')
 
     cy.login().visit(`/learn`).wait('@languageHeadRequest')
-    cy.get('input#learn_guess_input').type('anything')
-    cy.get('button.submitAnswer').click().get('form').submit().get('button.next').click().get('form').submit().wait('@postListGuess')
+    cy.get('input#learn-guess-input').type('anything')
+    cy.get('form').submit().wait('@postListGuess')
   })
 
   it(`displays another word after clicking the 'next' button`, () => {
-    cy.get('button.submitAnswer').click().get('form').submit().get('button.next').click().get('form').submit()
+    cy.get('main button').click()
 
     cy.fixture('language-guess-generic.json')
       .then(languageHeadFixture => {
@@ -44,20 +44,20 @@ describe(`User story: Go to next word`, function () {
             )
           cy.get('h2')
             .should('have.text', 'Translate the word:')
-            .siblings('span.test-next-word-from-generic-guess')
+            .siblings('span')
             .should('have.text', languageHeadFixture.nextWord)
         })
       })
 
     cy.get('main form').within($form => {
-      cy.get('label[for=learn_guess_input]')
+      cy.get('label[for=learn-guess-input]')
         .should('have.text', `What's the translation for this word?`)
 
-      cy.get('input#learn_guess_input')
+      cy.get('input#learn-guess-input')
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('button[type=submit].submitAnswer')
+      cy.get('button[type=submit]')
         .should('have.text', 'Submit your answer')
     })
   })
