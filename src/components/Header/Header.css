@@ -1,68 +1,78 @@
-.main-header{
-  background-color: #AA151B;
-  margin-bottom: 50px; 
-  padding:10px;
+.main-header {
+  background-color: #aa151b;
+  margin-bottom: 50px;
+  padding: 10px;
 }
 
-.header-navigation{
-  display: inline-block; 
+.header-navigation {
+  display: inline-block;
 }
 
-
-.login-link, .register-link, .logout-link, .header-username{
-  font-family: 'Montserrat';
+.login-link,
+.register-link,
+.logout-link,
+.header-username {
+  font-family: "Montserrat";
   text-transform: uppercase;
-  color: white; 
-  text-decoration: none; 
-  margin-left: 20px; 
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
   height: 100px;
 }
 
-.header-username{
+.header-username {
   font-size: 18px;
 }
 
-.login-link, .register-link, .logout-link{
-  font-size: 18px;  
+.login-link,
+.register-link,
+.logout-link {
+  font-size: 18px;
 }
 
-.login-link:hover, .register-link:hover, .logout-link:hover,
-.login-link:focus, .register-link:focus, .logout-link:focus{
-  border-bottom: 2px solid #AA151B;
+.login-link:hover,
+.register-link:hover,
+.logout-link:hover,
+.login-link:focus,
+.register-link:focus,
+.logout-link:focus {
+  border-bottom: 2px solid #fff;
 }
 
-.header-container{ 
+.header-container {
   padding: 0 10px;
   margin: 0 auto;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header-title-link{
-  color: #F1BF00; 
-  font-family: 'Flamenco', cursive;
-  text-decoration: none; 
-  font-size: 34px; 
-  text-align: left; 
+.header-title-link {
+  color: #f1bf00;
+  font-family: "Flamenco", cursive;
+  text-decoration: none;
+  font-size: 34px;
+  text-align: left;
 }
 
-.header-title{
+.header-title {
   margin: 0;
   display: inline-block;
 }
 
-.header-title-link:focus, .header-title-link:hover{
-  border-bottom: 3px solid #AA151B;
+a:focus,
+a:hover {
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+  font-size: 1em;
 }
 
-@media only screen and (max-width: 760px){
-  .header-container{
+@media only screen and (max-width: 760px) {
+  .header-container {
     display: block;
   }
 
-  .header-title{
-    display: block; 
+  .header-title {
+    display: block;
   }
 
   .header-loggedin {
@@ -79,7 +89,7 @@
     margin-left: 0px;
   }
 
-  .header-navigation a{
+  .header-navigation a {
     margin-left: 0px;
   }
 
@@ -87,14 +97,14 @@
     margin-left: 10px;
   }
 
-  .header-title-link{
+  .header-title-link {
     display: block;
     text-align: center;
     font-size: 30px;
+    text-decoration: none;
   }
 
-  .header-title{
+  .header-title {
     margin-bottom: 10px;
   }
-
 }
