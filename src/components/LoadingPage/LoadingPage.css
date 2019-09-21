@@ -24,7 +24,7 @@
 
 .loading-animated-light{
   animation: loading-animation-light 3s linear infinite;
-  background-color: #0039F0;
+  background-color: #058E6E;
 }
 
 @keyframes loading-animation {

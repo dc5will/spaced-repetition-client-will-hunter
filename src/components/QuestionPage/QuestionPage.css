@@ -53,7 +53,7 @@
 }
 
 .question-input:hover, .question-input:focus{
-  border-bottom: 3px solid #0039F0;
+  border-bottom: 3px solid #058E6E;
 }
 
 .question-footer{
@@ -74,7 +74,7 @@
   font-weight: 900; 
   font-size: 24px; 
   margin-bottom: 0px;
-  color: #0039F0
+  color: #058E6E
 }
 
 .question-score{

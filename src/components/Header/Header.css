@@ -9,11 +9,12 @@
 }
 
 .login-link, .register-link, .logout-link, .header-username{
-  font-family: 'Raleway';
+  font-family: 'Roboto';
+  text-transform: uppercase;
   color: white; 
   text-decoration: none; 
   margin-left: 20px; 
-  font-weight: 800;
+  /* font-weight: 800; */
   height: 100px;
 }
 

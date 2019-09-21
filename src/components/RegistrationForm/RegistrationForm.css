@@ -10,7 +10,7 @@
 }
 
 .user-form-bottom{
-  background-color: #f7f7f7;
+  background-color: #AA151B;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px; 
   border-top: none; 
@@ -105,18 +105,18 @@
 }
 
 .user-form-input:focus{
-  border: 3px solid #0039F0;
+  border: 3px solid #058E6E;
 }
 
 .sign-in-link{
   margin-top: 2px;
-  color:#0039F0;
+  color: white;
   height: 22px;
   text-decoration: none; 
 }
 
 .sign-in-link:hover {
-  border-bottom: 2px solid #0039F0;
+  border-bottom: 2px solid #F1BF00;
 }
 
 

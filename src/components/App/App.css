@@ -3,9 +3,9 @@ a.blue-button{
 }
 
 .blue-button{
-  background-color: #0039F0;
+  background-color: #006341;
   border: none; 
-  border-bottom: 4px solid #1a53bb;
+  border-bottom: 4px solid #058E6E;
   border-radius: 15px; 
   color: white; 
   text-transform: uppercase; 
@@ -21,7 +21,7 @@ a.blue-button{
 }
 
 .blue-button:hover, .blue-button:focus {
-  background-color: rgb(70, 184, 255);  
+  background-color: #058E6E;  
 }
 
 .fas{
