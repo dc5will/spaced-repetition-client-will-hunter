@@ -14,11 +14,11 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 ## Screenshots 
 
-![Dashboard](./screenshots/spacedrep1.png | width=600)
+![Dashboard](./screenshots/spacedrep1.png)
 
-![Question](./screenshots/spacedrep2.png | width=600)
+![Question](./screenshots/spacedrep2.png)
 
-![CorrectAns](./screenshots/spacedrep3.png | width=600)
+![CorrectAns](./screenshots/spacedrep3.png)
 
 
 ## API Documentation
