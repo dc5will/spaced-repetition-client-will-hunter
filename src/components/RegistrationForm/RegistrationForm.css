@@ -46,12 +46,13 @@
 
 .user-form-header{
   font-size: 40px; 
+  font-weight: bolder;
 }
 
 .user-form-subtitle{
   font-weight: 800;
   color: #000000;
-  font-size: 16px; 
+  font-size: 18px; 
   margin-bottom: 30px;
 }
 

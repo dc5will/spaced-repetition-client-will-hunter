@@ -76,7 +76,7 @@ class LoginForm extends Component {
           />
         </div>
         <div className='login-guest-demo'><em><b>Demo account</b></em><br/><b>Username:</b> guest<br/><b>Password:</b> Password1234!</div><br/>
-        <Button className="blue-button user-form-button" type='submit'>
+        <Button className="green-button user-form-button" type='submit'>
           Login
         </Button>
       </form>

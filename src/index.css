@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,800');
 @import url('https://fonts.googleapis.com/css?family=Be+Vietnam');
 @import url('https://fonts.googleapis.com/css?family=Flamenco'); 
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
@@ -26,5 +26,5 @@ body {
 }
 
 h1, h2, h3, h4{
-  font-weight: 900; 
+  font-weight: 800; 
 }

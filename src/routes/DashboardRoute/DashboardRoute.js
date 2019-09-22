@@ -66,7 +66,7 @@ class DashboardRoute extends Component {
               Total correct answers:{" "}
               <span>{total_score ? total_score.toLocaleString() : 0}</span>
             </p>
-            <Link to="/learn" className="blue-button dashboard-practice-button">
+            <Link to="/learn" className="green-button dashboard-practice-button">
               Start practicing
             </Link>
           </div>

@@ -53,7 +53,7 @@ class QuestionPage extends Component {
               What's the translation for this word?
             </label>
             <Input ref={this.guessInput} type="text" id="learn-guess-input" autoComplete="off" required className="question-input"/>
-            <button type="submit" className="blue-button learning-route-button">Submit your answer</button>
+            <button type="submit" className="green-button learning-route-button">Submit your answer</button>
           </form>
         </div>
         <footer className="question-footer">

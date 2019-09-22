@@ -79,7 +79,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <Button className="blue-button user-form-button" type='submit'>
+        <Button className="green-button user-form-button" type='submit'>
           Sign up
         </Button>
       </form>

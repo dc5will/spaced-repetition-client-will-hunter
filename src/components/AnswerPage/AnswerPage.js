@@ -33,9 +33,9 @@ class AnswerPage extends Component {
             {this.context.isCorrect ? "You were correct! :D" : "Good try, but not quite right :("}
           </h2>
           <div className="DisplayFeedback">
-            <p >The correct translation for {this.context.word} was {this.context.answer} and you chose {this.context.guess}!</p>
+            <p >The correct translation for <span className='current-word'>{this.context.word}</span> was <span className='correct-answer'>{this.context.answer}</span> and you chose <span className='users-answer'>{this.context.guess}!</span></p>
           </div>
-          <button ref={this.buttonRef} className="blue-button learning-route-button" onClick={this.nextWord}>Try another word!</button>
+          <button ref={this.buttonRef} className="green-button learning-route-button" onClick={this.nextWord}>Try another word!</button>
         </div>
       </section>
     );

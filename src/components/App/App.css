@@ -1,8 +1,8 @@
-a.blue-button{
+a.green-button{
   text-decoration: none;
 }
 
-.blue-button{
+.green-button{
   background-color: #006341;
   border: none; 
   border-bottom: 4px solid #058E6E;
@@ -16,11 +16,11 @@ a.blue-button{
   font-family: 'Montserrat', sans-serif; 
 }
 
-.blue-button:hover{
+.green-button:hover{
   cursor: pointer;
 }
 
-.blue-button:hover, .blue-button:focus {
+.green-button:hover, .green-button:focus {
   background-color: #058E6E;  
 }
 
