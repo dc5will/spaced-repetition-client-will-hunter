@@ -5,6 +5,7 @@ import UserContext from "../../contexts/UserContext";
 import "./Header.css";
 
 class Header extends Component {
+  state = {hover: false}
   static contextType = UserContext
 
   handleLogoutClick = () => {
@@ -39,13 +40,21 @@ class Header extends Component {
     )
   }
 
+  // methods for on hover header title effect
+  hoverOn = () => {
+    this.setState({ hover: true });
+  }
+  hoverOff = () => { 
+      this.setState({ hover: false });    
+  }
+
   render() {
     return (
       <header role="banner" className="main-header">
         <div className="header-container" >
           <h1 className="header-title">
-            <Link className="header-title-link" to='/'>
-              Spaced Repetition
+          <Link className="header-title-link" to='/' data-hover='Spaced Repetition' onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}><img className='header-icon' src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/800px-Flag_of_Mexico.svg.png' alt='spain header icon'></img>
+              {this.state.hover ? "Repetición Espaciada" : "Spaced Repetition"}
             </Link>
           </h1>
           {TokenService.hasAuthToken()

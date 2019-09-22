@@ -20,7 +20,7 @@ class RegistrationRoute extends Component {
         <div className="user-form-top">
           <h2 className="user-form-header">Sign up</h2>
           <p className="user-form-subtitle">
-            Practice learning a language with the spaced reptition revision technique.
+            Practice learning a language with the spaced repetition revision technique.
           </p>
           <RegistrationForm
             onRegistrationSuccess={this.handleRegistrationSuccess}
