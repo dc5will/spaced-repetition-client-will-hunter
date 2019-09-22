@@ -30,7 +30,8 @@
   font-family: 'Roboto';
   margin-top: 20px;
   text-transform: capitalize;
-  font-size: 30px;
+  font-style: italic;
+  font-size: 28px;
 }
 
 .question-form-label{
