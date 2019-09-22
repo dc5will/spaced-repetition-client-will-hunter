@@ -3,8 +3,7 @@ import { Input, Label } from '../Form/Form'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import Button from '../Button/Button'
-
-// CSS styles are in RegistrationForm.css
+import './LoginForm.css'
 
 class LoginForm extends Component {
   static defaultProps = {
@@ -76,6 +75,7 @@ class LoginForm extends Component {
             required
           />
         </div>
+        <div className='login-guest-demo'><em><b>Demo account</b></em><br/><b>Username:</b> guest<br/><b>Password:</b> Password1234!</div><br/>
         <Button className="blue-button user-form-button" type='submit'>
           Login
         </Button>
