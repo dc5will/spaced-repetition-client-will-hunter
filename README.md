@@ -4,23 +4,38 @@ By William Wong and Hunter Kreshock
 
 ## Summary
 
-Learn Spanish through the use of the spaced repetition technique. Words that you get wrong will be seen more frequently than words you get correct until you master them all. 
+A full-stack app created to help a user learn Spanish vocabulary through the use of the spaced repetition technique. Words that you get wrong will be seen more frequently than words you get correct until you master them all. Implemented using singly linked list and completed following strict test specifications. 
 
 ## Live Link
 
-[Live Demo](https://spaced-repetition-will-hunter.now.sh)
+[Live Demo](https://spaced-repetition-client-will-hunter.dc5will.now.sh)
 
 [Server Repo](https://github.com/thinkful-ei-armadillo/spaced-repetition-server-william-hunter)
 
+## Screenshots 
+
+![Signup](./screenshots/spacedrep.png)
+![Dashboard](./screenshots/spacedrep1.png)
+![Question](./screenshots/spacedrep2.png)
+![CorrectAns](./screenshots/spacedrep3.png)
+![WrongAns](./screenshots/spacedrep4.png)
+
+
+## API Documentation
+
+[Heroku API](https://tranquil-harbor-49659.herokuapp.com/)
+
+Endpoints: /auth /token /language /head /guess /user
+
+This API is supported by a database with tables the users' information, our language (which can be expanded to feature other languages), and the words to practice.
+
 ## Technologies
 
-Front-end: React, React Router, HTML, CSS, JavaScript
-
-Back-end: Node.js, Express
-
-Data persistence: PostgresQL
-
+Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
+Back-end: Node.js, Knex.js, Express, Mocha/CHai
+Data persistence: PostgreSQL
 Deployment: Zeit NOW, Heroku
+Development: Git, GitHub
 
 ## Setup
 
@@ -35,10 +50,34 @@ The project expects you have the Spaced repetition API project setup and running
 
 This is a `create-react-app` project so `npm start` will start the project in development mode with hot reloading by default.
 
-## API Documentation
+## Running the tests
 
-[Heroku API](https://tranquil-harbor-49659.herokuapp.com/)
+This project uses [Cypress IO](https://docs.cypress.io) for integration testing using the Chrome browser.
 
-Endpoints: /auth /token /language /head /guess /user
+Cypress has the following expectations:
 
-This API is supported by a database with tables the users' information, our language (which can be expanded to feature other languages), and the words to practice.
+- You have cypress installed (this is a devDependency of the project)
+- You have your application running at http://localhost:3000.
+  - You can change the address of this expectation in the `./cypress.json` file.
+- Your `./src/config.js` is using http://localhost:8000/api as the `API_ENDPOINT`
+
+To start the tests run the command:
+
+```bash
+npm run cypress:open
+```
+
+On the first run of this command, the cypress application will verify its install. Any other runs after this, the verification will be skipped.
+
+The command will open up the Cypress application which reads tests from the `./cypress/integration/` directory. You can then run individual tests by clicking on the file names or run all tests by clicking the "run all tests" button in the cypress GUI.
+
+Tests will assert against your running localhost client application.
+
+You can also start all of the tests in the command line only (not using the GUI) by running the command:
+
+```bash
+npm run cypress:run
+```
+
+This will save video recordings of the test runs in the directory `./cypress/videos/`.
+
