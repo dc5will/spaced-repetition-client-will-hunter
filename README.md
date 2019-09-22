@@ -6,7 +6,7 @@ By William Wong and Hunter Kreshock
 
 A full-stack app created to help a user learn Spanish vocabulary through the use of the spaced repetition technique. Words that you get wrong will be seen more frequently than words you get correct until you master them all. Implemented using singly linked list and completed following strict test specifications. 
 
-## Live Link
+## Live Links
 
 [Live Demo](https://spaced-repetition-client-will-hunter.dc5will.now.sh)
 
@@ -14,11 +14,11 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 ## Screenshots 
 
-![Signup](./screenshots/spacedrep.png)
-![Dashboard](./screenshots/spacedrep1.png)
-![Question](./screenshots/spacedrep2.png)
-![CorrectAns](./screenshots/spacedrep3.png)
-![WrongAns](./screenshots/spacedrep4.png)
+![Dashboard](./screenshots/spacedrep1.png | width=600)
+
+![Question](./screenshots/spacedrep2.png | width=600)
+
+![CorrectAns](./screenshots/spacedrep3.png | width=600)
 
 
 ## API Documentation
@@ -31,11 +31,11 @@ This API is supported by a database with tables the users' information, our lang
 
 ## Technologies
 
-Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
-Back-end: Node.js, Knex.js, Express, Mocha/CHai
-Data persistence: PostgreSQL
-Deployment: Zeit NOW, Heroku
-Development: Git, GitHub
+* Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
+* Back-end: Node.js, Knex.js, Express, Mocha/CHai
+* Data persistence: PostgreSQL
+* Deployment: Zeit NOW, Heroku
+* Development: Git, GitHub
 
 ## Setup
 
