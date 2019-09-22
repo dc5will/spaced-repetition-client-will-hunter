@@ -32,7 +32,7 @@ This API is supported by a database with tables the users' information, our lang
 ## Technologies
 
 * Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
-* Back-end: Node.js, Knex.js, Express, Mocha/CHai
+* Back-end: Node.js, Knex.js, Express, Mocha/Chai
 * Data persistence: PostgreSQL
 * Deployment: Zeit NOW, Heroku
 * Development: Git, GitHub
