@@ -1,15 +1,15 @@
 {
-  "name": "spaced-repitition",
+  "name": "spaced-repetition",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.24",
+    "@fortawesome/free-solid-svg-icons": "^5.11.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
     "jwt-decode": "^2.2.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8"
   },
@@ -35,7 +35,7 @@
   ],
   "devDependencies": {
     "cypress": "^3.4.1",
-    "jsonwebtoken": "^8.5.0",
+    "jsonwebtoken": "^8.5.1",
     "unfetch": "^4.1.0"
   }
 }

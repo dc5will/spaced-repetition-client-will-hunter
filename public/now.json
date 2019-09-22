@@ -1,11 +1,15 @@
 {
-  "version": 2,
-  "alias": "spaced-repetition-will-hunter",
-  "name": "spaced-repetition-will-hunter",
+  "version": 1,
+  "alias": "spaced-repetition-will",
+  "name": "spaced-repetition-will",
   "routes": [
       {
         "src": "^/static/(.*)",
         "dest": "/static/$1"
+      },
+      {
+        "src": "^/favicon.ico$",
+        "dest": "/favicon.ico"
       },
       {
         "src": "^/manifest.json$",
