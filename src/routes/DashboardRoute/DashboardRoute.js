@@ -53,7 +53,7 @@ class DashboardRoute extends Component {
         <header className="dashboard-header">
           <img
             className="dashboard-flag"
-            src="https://image.flaticon.com/icons/svg/1377/1377973.svg"
+            src="https://cdn3.iconfinder.com/data/icons/spain-2/92/icon50-23-512.png"
             alt="spanish icon for dashboard"
           />
           <h2 className="dashboard-language-title">
