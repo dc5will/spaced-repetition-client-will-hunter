@@ -10,7 +10,7 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 [Live Demo](https://spaced-repetition-client-will-hunter.dc5will.now.sh)
 
-[Server Repo](https://github.com/thinkful-ei-armadillo/spaced-repetition-server-william-hunter)
+[Server Repo](https://github.com/dc5will/spaced-repetition-server-william-hunter)
 
 ## Screenshots 
 
