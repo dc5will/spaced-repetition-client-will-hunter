@@ -16,7 +16,7 @@ class QuestionPage extends Component {
 
   postGuess = (e) =>{
     e.preventDefault();
-    const guess = e.target["learn-guess-input"].value.trim(); 
+    const guess = e.target["learn-guess-input"].value.trim().toLowerCase(); 
     fetch(`${Config.API_ENDPOINT}/language/guess`, {
       headers: {
         'Authorization': `bearer ${TokenService.getAuthToken()}`,
