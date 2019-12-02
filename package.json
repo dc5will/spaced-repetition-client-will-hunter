@@ -21,7 +21,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "predeploy": "npm run build",
-    "deploy": "now ./build",
+    "deploy": "now",
     "postdeploy": "now alias -A ./build/now.json"
   },
   "eslintConfig": {

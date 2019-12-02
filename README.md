@@ -8,7 +8,7 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 ## Live Links
 
-[Live Demo](https://spaced-repetition-client-will-hunter.dc5will.now.sh)
+[Live Demo](https://spaced-repetition-client.now.sh)
 
 [Server Repo](https://github.com/dc5will/spaced-repetition-server-william-hunter)
 
