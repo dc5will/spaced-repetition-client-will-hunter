@@ -10,7 +10,7 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 [Live Demo](https://spaced-repetition-client-will-hunter.dc5will.now.sh)
 
-[Server Repo](https://github.com/thinkful-ei-armadillo/spaced-repetition-server-william-hunter)
+[Server Repo](https://github.com/dc5will/spaced-repetition-server-william-hunter)
 
 ## Screenshots 
 
@@ -32,7 +32,7 @@ This API is supported by a database with tables the users' information, our lang
 ## Technologies
 
 * Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
-* Back-end: Node.js, Knex.js, Express, Mocha/CHai
+* Back-end: Node.js, Knex.js, Express, Mocha/Chai
 * Data persistence: PostgreSQL
 * Deployment: Zeit NOW, Heroku
 * Development: Git, GitHub
