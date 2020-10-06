@@ -17,12 +17,16 @@ class AnswerPage extends Component {
       '' //guess
     );
   }
-
+  
   componentDidMount() {
     this.buttonRef.current.focus(); 
   }
-
+  
+  
   render() {
+    console.log('context =', this.context)
+    console.log('word =', this.context.word)
+    console.log('answer =', this.context.answer)
     return(
       <section className="answer-container container fade-in">
         <div className="answer-border">
