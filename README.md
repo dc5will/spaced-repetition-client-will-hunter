@@ -1,43 +1,37 @@
-# Spaced Repetition Capstone
+# Spaced Repetition Spanish Client
 
-By William Wong and Hunter Kreshock
+## Overview
 
-## Summary
+A full-stack web application created to help users learn common Spanish vocabulary through the use of the spaced repetition learning technique. 
 
-A full-stack app created to help a user learn Spanish vocabulary through the use of the spaced repetition technique. Words that you get wrong will be seen more frequently than words you get correct until you master them all. Implemented using singly linked list and completed following strict test specifications. 
+The most challenging part of learning a new language is repetition and retention. That is where the spaced repetition technique comes in! 
 
-## Live Links
+Words that users answer incorrectly will be seen more frequently than words they answer correctly until they master them all. Duolingo inspired web application with an emphasis on utilizing the spaced repetition technique to maximize Spanish vocabulary learning effectiveness. 
 
-[Live Demo](https://spaced-repetition-client.now.sh)
+Users are able to securely register and login to their personal account where their personal progress will be saved. The users can view their personal progress on the dashboard and simply pick up where they last left off and continue their learning journey.
 
-[Server Repo](https://github.com/dc5will/spaced-repetition-server-william-hunter)
+- [Live Demo](https://spaced-repetition-client.now.sh)
+- [Server Repo](https://github.com/dc5will/spaced-repetition-server-william-hunter)
+- [Heroku API](https://immense-harbor-42592.herokuapp.com/)
 
 ## Screenshots 
 
-<img src="./screenshots/spacedrep.png" width="800">
+<img src="./screenshots/spacedrep.png" width="600">
 
-<img src="./screenshots/spacedrep3.JPG" width="800">
+<img src="./screenshots/spacedrep3.JPG" width="600">
 
-<img src="./screenshots/spacedrep2.png" width="800">
+<img src="./screenshots/spacedrep2.png" width="600">
 
-<img src="./screenshots/spacedrep4.JPG" width="800">
+<img src="./screenshots/spacedrep4.JPG" width="600">
 
-<img src="./screenshots/spacedrep5.JPG" width="800">
-
-## API Documentation
-
-[Heroku API](https://immense-harbor-42592.herokuapp.com/)
-
-Endpoints: /auth /token /language /head /guess /user
-
-This API is supported by a database with tables the users' information, our language (which can be expanded to feature other languages), and the words to practice.
+<img src="./screenshots/spacedrep5.JPG" width="600">
 
 ## Technologies
 
 * Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
 * Back-end: Node.js, Knex.js, Express, Mocha/Chai
 * Database: PostgreSQL
-* Deployment: Vercel, Heroku, Heroku Postgres
+* Deployment: Vercel (formerly Zeit), Heroku, Heroku Postgres
 * Development: Git, GitHub
 
 ## Setup
@@ -46,8 +40,6 @@ To setup the application
 
 1. Fork and clone the project to your machine
 2. `npm install`. This will also install the application *Cypress.io* for running browser integration tests
-
-The project expects you have the Spaced repetition API project setup and running on http://localhost:8000.
 
 ## Scripts
 
@@ -85,4 +77,8 @@ npm run cypress:run
 This will save video recordings of the test runs in the directory `./cypress/videos/`.
 
 <img src="./screenshots/spacedrep-cypress.JPG" width="800">
+
+## Contributors
+
+William Wong and Hunter Kreshock
 
