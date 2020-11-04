@@ -18,6 +18,7 @@ export class LanguageProvider extends Component {
   }
 
   setLanguage = (data) =>{
+    console.log('setLanguage data', data)
     this.setState({
       language: data.language,
       words: data.words
