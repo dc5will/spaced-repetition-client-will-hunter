@@ -14,15 +14,15 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 ## Screenshots 
 
-![Sign up](./screenshots/spacedrep.png) { width: 400px }
+<img src="./screenshots/spacedrep.png" width="800">
 
-![Dashboard](./screenshots/spacedrep3.JPG) { width: 400px }
+<img src="./screenshots/spacedrep3.JPG" width="800">
 
-![Question](./screenshots/spacedrep2.png) { width: 400px }
+<img src="./screenshots/spacedrep2.png" width="800">
 
-![Correct Answer](./screenshots/spacedrep4.JPG) { width: 400px }
+<img src="./screenshots/spacedrep4.JPG" width="800">
 
-![Incorrect Answer](./screenshots/spacedrep5.JPG) { width: 400px }
+<img src="./screenshots/spacedrep5.JPG" width="800">
 
 ## API Documentation
 
