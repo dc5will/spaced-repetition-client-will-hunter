@@ -14,9 +14,15 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 ## Screenshots 
 
-![Dashboard](./screenshots/spacedrep1.png)
+![Sign up](./screenshots/spacedrep.png)
+
+![Dashboard](./screenshots/spacedrep3.JPG)
 
 ![Question](./screenshots/spacedrep2.png)
+
+![Correct Answer](./screenshots/spacedrep4.JPG)
+
+![Incorrect Answer](./screenshots/spacedrep5.JPG)
 
 ## API Documentation
 
