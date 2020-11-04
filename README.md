@@ -18,12 +18,9 @@ A full-stack app created to help a user learn Spanish vocabulary through the use
 
 ![Question](./screenshots/spacedrep2.png)
 
-![CorrectAns](./screenshots/spacedrep3.png)
-
-
 ## API Documentation
 
-[Heroku API](https://tranquil-harbor-49659.herokuapp.com/)
+[Heroku API](https://immense-harbor-42592.herokuapp.com/)
 
 Endpoints: /auth /token /language /head /guess /user
 
@@ -33,8 +30,8 @@ This API is supported by a database with tables the users' information, our lang
 
 * Front-end: React.js, React Router, React Context, CSS3, Cypress Testing 
 * Back-end: Node.js, Knex.js, Express, Mocha/Chai
-* Data persistence: PostgreSQL
-* Deployment: Zeit NOW, Heroku
+* Database: PostgreSQL
+* Deployment: Vercel, Heroku, Heroku Postgres
 * Development: Git, GitHub
 
 ## Setup
